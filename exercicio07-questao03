@@ -1,0 +1,32 @@
+class Calculadora {
+    private n1: number;
+    private n2: number;
+  
+    constructor(n1: number, n2: number) {
+      this.n1 = n1;
+      this.n2 = n2;
+    }
+  
+    public multiplicar(): number {
+      return this.n1 * this.n2;
+    }
+  
+    protected getn1(): number {
+      return this.n1;
+    }
+  
+    protected getn2(): number {
+      return this.n2;
+    }
+  }
+  
+  class CalculadoraCientifica extends Calculadora {
+    public exponenciar(): number {
+      return Math.pow(this.getn1(), this.getn2());
+    }
+  }
+  
+  // EXEMPLO DE USO
+  const calcCientifica = new CalculadoraCientifica(10, 30);
+  console.log(`A multiplicação dos números é: ${calcCientifica.multiplicar()}`);
+  console.log(`O resultado da exponenciação é: ${calcCientifica.exponenciar()}`);
