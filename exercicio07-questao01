@@ -1,0 +1,37 @@
+class Veiculo {
+    placa: string;
+    ano: number;
+  
+    constructor(placa: string, ano: number) {
+      this.placa = placa;
+      this.ano = ano;
+    }
+  }
+  
+  class Carro extends Veiculo {
+    modelo: string;
+  
+    constructor(placa: string, ano: number, modelo: string) {
+      super(placa, ano);
+      this.modelo = modelo;
+    }
+  }
+  
+  class CarroEletrico extends Carro {
+    autonomiaBateria: number;
+  
+    constructor(placa: string, ano: number, modelo: string, autonomiaBateria: number) {
+      super(placa, ano, modelo);
+      this.autonomiaBateria = autonomiaBateria;
+    }
+  }
+  
+  // EXEMPLO DE USO
+  const veiculo = new Veiculo("D1E2F34", 2024);
+  const carro = new Carro("ABC-4321", 2022, "Sedan");
+  const carroEletrico = new CarroEletrico("GHI-9012", 2022, "Hatch", 1000);
+  
+  console.log(veiculo);
+  console.log(carro);
+  console.log(carroEletrico);
+  
